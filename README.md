@@ -5,7 +5,7 @@ cd project
 npm start
 
 
-core Components...
+core Components....
 1. view
 2. Text
 3. image
