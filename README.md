@@ -1,8 +1,59 @@
+## Expo first Project..
 ```
-npm i expo-cli-g
+npm i -g expo-cli
 expo init project-name  --> Blank project
 cd project
 npm start
+
+# To build and push to expo
+npm install -g eac-cli
+
+and generate a json file
+
+# expo-DoneWithIt % cat eas.json 
+{
+    "build": {
+      "development": {
+        "developmentClient": true,
+        "distribution": "internal"
+      },
+
+      "preview": {
+       "android":{
+        
+        "buildType":"apk"
+       }
+      }
+      
+    }
+  }
+
+eas build -p android --profile preview
+if the command success complted, then apk file will be gebnerated and pushed to expo.
+```
+# React Native Project..
+```
+npx react-native init react_Native
+npx react-native run:android
+```
+## Important Files.
+```
+package.json - hold the application packages
+package-lock.json - hold all dependencies
+watchmen file will monitor the changes in the code
+metro.config.js file will load the changes
+babel - will take care of Compatibility.
+Gemfile - helpful while deguging
+eslintrc - manages linting
+.buckconfig - supports which platforms
+
+```
+
+
+
+```
+
+
 
 
 core Components......

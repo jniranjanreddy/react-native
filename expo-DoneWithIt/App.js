@@ -1,49 +1,80 @@
-import { StatusBar } from 'expo-status-bar';
-import { Platform,StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { Text,
+   View,
+   StyleSheet,
+   Button,
+   Alert,
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-
-      <View style={styles.child1Container}>
-      <Text>Open up App.js to start working  ! Open up App.js to start working  !</Text>
-      <Text>Text Component child 1</Text>
-    </View>
-    <View style={styles.child2Container}>
-      <Text>Open up App.js to start working  !</Text>
-      <Text>Text Component child 2</Text>
-
-    </View>
+  } from 'react-native';
+import CompanyData from './components/companyData'
 
 
-    </View>
+const name = "Niru";
+let age = 30;
+var email="admin@jnrlabs.com";
 
-    
-  );
+function fruit(){
+  return "apple";
+
+}
+function myLog(){
+  console.warn("Function Called");
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    
-    backgroundColor: 'yellow',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  child1Container: {
-    flex: 0.5,
-    backgroundColor: 'red',
+const App = () => {
+  return (
+    <View>
+      {/* <Text style={{ fontSize:30}}> Hello, React Native! </Text> */}
+      <Text style={{ fontSize:30}}> Welcome, {name} </Text>
   
-    justifyContent: 'center',
-  },
-  child2Container: {
-    flex: 0.5,
-    backgroundColor: 'green',
-    // marginVertical:10,
-    margin:30,
-    paddingHorizontal:100,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+      <UserData />
+      <CompanyData />
+            <Button
+                    title="Tap Me"
+                    color="#841584"
+                    onPress={() => Alert.alert('Button pressed')}/>
+            <Button
+                    title="Press Me"
+                    color=""
+                    onPress={ myLog }/>        
+    
+    </View>
+
+  );
+};
+
+const UserData = () =>{
+ return(
+ <View>
+      <Text style={{ fontSize:20}}> empID: 10442</Text>
+      <Text style={{ fontSize:20}}> Name: Raj </Text>
+      <Text style={{ fontSize:20}}> Role: DevOps </Text>
+  </View>    
+);
+};
+const EmpData = () =>{
+  return(
+  <View>
+       <Text style={{ fontSize:20}}> empID: 10442</Text>
+       <Text style={{ fontSize:20}}> Name: Raj </Text>
+       <Text style={{ fontSize:20}}> Role: DevOps </Text>
+   </View>    
+ )
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export default App;
