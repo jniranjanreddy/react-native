@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "expo-DoneWithIt",
+    "slug": "expo-DoneWithIt",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.niranjan.jannapureddy.expoDoneWithIt"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9e06a894-c7bd-4214-9610-6f70c50717b6"
+      }
+    }
+  }
+}
