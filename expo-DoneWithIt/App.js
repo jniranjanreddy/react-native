@@ -1,86 +1,72 @@
-import React, { useState } from 'react';
-import {
-    Text,
-    View,
-    StyleSheet,
-    Button,
-    Alert,
-    TextInput,
-} from 'react-native';
-
+import React from 'react';
+import { Text,
+   View,
+   StyleSheet,
+   Button,
+   Alert,
+   FlatList,
+  } from 'react-native';
 
 const App = () => {
-    const [name,setName] = useState("");
-    const [email,setEmail] = useState("");
-    const [password,setPassWord] = useState("");
-    const [display,setDisplay] = useState("false");
-    const resetFormData =()=>{
-        setDisplay(false)
-        setName("")
-        setEmail("")
-        setPassWord("")
-
-
-    }
+    const users = [
+        {
+            id: 1,
+            name: "niranjan",
+            email: "niranjan@gmail.com"
+        },
+        {
+            id: 2,
+            name: "Rajitha",
+            email: "Rajitha@gmail.com"
+        },
+        {
+            id: 3,
+            name: "Siri",
+            email: "Siri@gmail.com"
+        },
+        {
+            id: 4,
+            name: "Raji",
+            email: "Raji@gmail.com"
+        },
+    ];
     return (
-        <View>
-            <Text style={{ fontSize: 30, margin: 20 }}> Simple Form in React </Text>
-
-            <TextInput
-                style={styles.textInput}
-                placeholder='UserName: '
-                onChangeText={(text)=>setName(text)}
-                value={name}
-            />
-            <TextInput
-                style={styles.textInput}
-                placeholder='email: '
-                onChangeText={(text)=>setEmail(text)}
-                value={email}
-            />
-            <TextInput
-                style={styles.textInput}
-                placeholder='Password: '
-                onChangeText={(text)=>setPassWord(text)}
-                secureTextEntry={true}
-                value={password}
-            />
+    <View><Text style={{ fontSize:30, margin:20 }}> Loop with Flast List </Text>
+            <FlatList
+            data = {users}
+            renderItem={({item})=><View style={styles.box}>
+            <Text style={styles.textBox}> {item.id }</Text>
+            <Text style={styles.textBox}> {item.name }</Text>
             
+            {/* <Text style={styles.textBox}> {item.email }</Text> */}
+            
+            
+            </View>}
 
-            <View style={{ marginBottom:5, marginHorizontal:100 }}>
-            <Button color="green"  
-            title = 'print Details'
-            onPress={()=>setDisplay(true)}/>
-            </View>
+            />
+    </View>
+    // Start code from here
+    
+    );    
+}; 
 
-            <View style={{ marginBottom:5, marginHorizontal:100 }}>
-            <Button title = 'Clear'onPress={resetFormData}/>
-            </View>
-                {
-                    display ?
-                    <View>
-                            <Text style={{fontSize:10 }}> Username is: {name}     </Text>
-                            <Text style={{fontSize:10 }}> email is: {email}       </Text>
-                            <Text style={{fontSize:10 }}> Password is: {password} </Text>
-                    </View>
-                    : null
-                }  
-
-        </View>
-    );
-};
-
-const styles = StyleSheet.create({
-    textInput: {
-        fontSize: 18,
-        color: "blue",
-        borderWidth: 2,
-        margin: 5,
-        borderColor: "blue",
-        padding: 5,
-        borderRadius: 10
+const styles=StyleSheet.create({
+    textBox: {
+       color: "black",
+       fontSize: 20, 
+       flex:1,
+       margin:2,
+       backgroundColor:"yellow",
+       textAlign:"center"
+      },    
+    box:{
+     flexDirection:'row',
+     borderWidth:2,
+     borderColor: "red",
+     margin:5,
+     backgroundColor: "green"
     }
-
-});
+ 
+})
 
 export default App;
