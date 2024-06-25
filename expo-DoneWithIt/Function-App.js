@@ -9,8 +9,6 @@ import CompanyData from './components/companyData'
 
 
 
-
-
 const name = 'Niru';
 let age = 30;
 var email="admin@jnrlabs.com";

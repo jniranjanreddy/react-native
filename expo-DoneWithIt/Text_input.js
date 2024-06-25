@@ -9,7 +9,7 @@ import { Text,
 import style from './style';
 
 const App = () => {
-  const [name, setName] = useState("");
+ // const [name, setName] = useState("");
     return (
         <View>
           <Text style={{ fontSize:30, margin:20 }}> Handle Text Input </Text>
